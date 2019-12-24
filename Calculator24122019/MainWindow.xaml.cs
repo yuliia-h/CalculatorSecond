@@ -23,6 +23,34 @@ namespace Calculator24122019
         public MainWindow()
         {
             InitializeComponent();
-        }       
+        }
+
+        private void radioButtonScientific1_Checked(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void radioButtonStandart1_Click(object sender, RoutedEventArgs e)
+        {
+            gridStandart.Visibility = Visibility.Visible;
+            gridScientific.Visibility = Visibility.Hidden;
+            gridProgrammer.Visibility = Visibility.Hidden;
+        }
+
+        private void radioButtonScientific1_Click(object sender, RoutedEventArgs e)
+        {
+            gridStandart.Visibility = Visibility.Hidden;
+            gridProgrammer.Visibility = Visibility.Hidden;
+            gridScientific.Visibility = Visibility.Visible;
+
+        }
+
+        
+
+        private void radioButtonProgrammer1_Click(object sender, RoutedEventArgs e)
+        {
+            gridProgrammer.Visibility = Visibility.Visible;
+            gridStandart.Visibility = Visibility.Hidden;
+            gridScientific.Visibility = Visibility.Hidden;
+        }
     }
 }
