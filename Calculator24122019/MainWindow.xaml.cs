@@ -23,12 +23,6 @@ namespace Calculator24122019
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void button5_Click(object sender, RoutedEventArgs e)
-        {
-            string str = "jjjjj";
-            labelMain.Content += str;
-        }
+        }       
     }
 }
