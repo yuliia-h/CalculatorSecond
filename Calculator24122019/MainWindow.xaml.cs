@@ -23,8 +23,17 @@ namespace Calculator24122019
         public MainWindow()
         {
             InitializeComponent();
+            this.KeyDown += new KeyEventHandler(OnButtonKeyDown);
+
         }
 
+        private void OnButtonKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.OemQuotes)
+                labelMain.Content += "'"; // добавляем кавычки
+            else
+                labelMain.Content += e.Key.ToString();
+        }
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             string str = "jjjjj";
