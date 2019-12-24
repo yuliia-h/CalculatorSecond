@@ -6,45 +6,21 @@
         xmlns:local="clr-namespace:Calculator24122019"
         mc:Ignorable="d"
         Title="Calculator" MinWidth="403" MinHeight="450" Height="611" Width="608" Background="#ebebeb" FontSize="18" FontFamily="Myriad Pro">
-    <Grid>
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="94" MaxWidth="294"/>
-            <ColumnDefinition MinWidth="94" MaxWidth="294"/>
-            <ColumnDefinition MinWidth="94" MaxWidth="294"/>
-            <ColumnDefinition MinWidth="94" MaxWidth="294"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="35"></RowDefinition>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>-->
-
-        <Grid Grid.Row="0" x:Name="gridRadio" Margin="0,0,-0.4,541.6" Visibility="Visible" Grid.ColumnSpan="5">
+    <DockPanel>
+        <!--RadioButton-->
+        <Grid x:Name="gridRadio" Height="50" Visibility="Visible" DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth="94" MaxWidth="294"/>
-                <ColumnDefinition MinWidth="94" MaxWidth="294"/>
-                <ColumnDefinition MinWidth="94" MaxWidth="294"/>
-                <ColumnDefinition MinWidth="94" MaxWidth="294"/>
-                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition MinHeight="35"></RowDefinition>
             </Grid.RowDefinitions>
-            <RadioButton GroupName="groupChange" x:Name="radioButtonStandart1" Content="Standart" Grid.Column="0" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center"/>
-            <RadioButton GroupName="groupChange" x:Name="radioButtonScientific1" Content="Scientific" Grid.Column="1" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center"/>
-            <RadioButton GroupName="groupChange" x:Name="radioButtonProgrammer1" Content="Programmer" Grid.Column="2" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center"/>
+            <RadioButton GroupName="groupChange" x:Name="radioButtonStandart1" Content="Standart"  Margin="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <RadioButton GroupName="groupChange" x:Name="radioButtonScientific1" Content="Scientific"  Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <RadioButton GroupName="groupChange" x:Name="radioButtonProgrammer1" Content="Programmer"   Margin="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         </Grid>
-
-        <Grid x:Name="gridLabel" Visibility="Visible" Margin="0,40,-0.4,452.6" Grid.ColumnSpan="2">
+        <!--Labeles-->
+        <Grid x:Name="gridLabel" Visibility="Visible" DockPanel.Dock="Top">
             <Grid.RowDefinitions>
                 <RowDefinition MinHeight="20"></RowDefinition>
                 <RowDefinition MinHeight="60"></RowDefinition>
@@ -52,8 +28,8 @@
             <Label x:Name="labelDuplicate" Grid.Row="0" Content="Label" Margin="0,0,1,0.8"  VerticalAlignment="Bottom" FontSize="12" HorizontalAlignment="Right" Height="28" Width="601"/>
             <Label x:Name="labelMain" Grid.Row="1" Content="Label" HorizontalAlignment="Right" Margin="0"  VerticalAlignment="Stretch" FontSize="28" Width="592"/>
         </Grid>
-
-        <Grid x:Name="gridMemory" Margin="63,249,166.6,278.6" RenderTransformOrigin="0.795,0.48" >
+        <!--M+M_-->
+        <Grid x:Name="gridMemory" DockPanel.Dock="Top" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth="70" MaxWidth="294"/>
                 <ColumnDefinition MinWidth="70" MaxWidth="294"/>
@@ -67,7 +43,7 @@
             <Button x:Name="buttonMS" Content="MS" HorizontalAlignment="Stretch" Margin="0" Grid.Column="3" VerticalAlignment="Stretch" Background="#FFEBEBEB" BorderBrush="#FFF7EDED" FontSize="16"/>
         </Grid>
 
-        <Grid x:Name="gridStandart" Margin="106,303,151.6,166.6" RenderTransformOrigin="0.795,0.48">
+        <Grid x:Name="gridStandart" DockPanel.Dock="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth="94" MaxWidth="294"/>
                 <ColumnDefinition MinWidth="94" MaxWidth="294"/>
@@ -85,7 +61,7 @@
             <Button x:Name="button2korenx" Content="2korenx" HorizontalAlignment="Stretch" Margin="0" Grid.Row="6" Grid.Column="2" VerticalAlignment="Stretch" Background="#FFF1F1F1" BorderBrush="#FFEBEBEB"/>
         </Grid>
 
-        <Grid x:Name="gridNumber" Margin="0,420,153.6,4.6">
+        <Grid x:Name="gridNumber" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth="94" MaxWidth="294"/>
                 <ColumnDefinition MinWidth="94" MaxWidth="294"/>
@@ -116,7 +92,7 @@
 
         </Grid>
 
-        <Grid x:Name="gridOperation" Margin="455,342,68.6,10.6" RenderTransformOrigin="0.795,0.48">
+        <Grid x:Name="gridOperation" DockPanel.Dock="Right">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth="94" MaxWidth="294"/>
             </Grid.ColumnDefinitions>
@@ -128,15 +104,15 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="buttonclear" Content="clear" HorizontalAlignment="Stretch" Margin="0" Grid.Row="0" VerticalAlignment="Stretch" Background="#FFF1F1F1" BorderBrush="#FFF3ECEC"/>
-            <Button x:Name="buttonDivide" Content="/" HorizontalAlignment="Stretch" Margin="0" Grid.Row="1"  VerticalAlignment="Stretch" Background="#FFF1F1F1" BorderBrush="#FFEBEBEB"/>
-            <Button x:Name="buttonMultiply" Content="x" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2"  VerticalAlignment="Stretch" Background="#FFF1F1F1" BorderBrush="#FFEBEBEB"/>
-            <Button x:Name="buttonMinus" Content="-" HorizontalAlignment="Stretch" Margin="0" Grid.Row="3"  VerticalAlignment="Stretch" Background="#FFF1F1F1" BorderBrush="#FFEBEBEB"/>
-            <Button x:Name="buttonPlus" Content="+" HorizontalAlignment="Stretch" Margin="0" Grid.Row="4" VerticalAlignment="Stretch" Background="#FFF1F1F1" BorderBrush="#FFEBEBEB"/>
-            <Button x:Name="buttonEqually" Content="=" HorizontalAlignment="Stretch" Margin="0" Grid.Row="5"  VerticalAlignment="Stretch" Background="#FF82B2DA" BorderBrush="#FFEBEBEB"/>
+            <Button x:Name="buttonclear" Content="clear" Background="#FFF1F1F1" BorderBrush="#FFF3ECEC"/>
+            <Button x:Name="buttonDivide" Content="/" Background="#FFF1F1F1" BorderBrush="#FFEBEBEB"/>
+            <Button x:Name="buttonMultiply" Content="x" Background="#FFF1F1F1" BorderBrush="#FFEBEBEB"/>
+            <Button x:Name="buttonMinus" Content="-" Background="#FFF1F1F1" BorderBrush="#FFEBEBEB"/>
+            <Button x:Name="buttonPlus" Content="+" Background="#FFF1F1F1" BorderBrush="#FFEBEBEB"/>
+            <Button x:Name="buttonEqually" Content="=" Background="#FF82B2DA" BorderBrush="#FFEBEBEB"/>
         </Grid>
 
 
 
-    </Grid>
+    </DockPanel>
 </Window>
